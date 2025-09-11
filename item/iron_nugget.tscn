@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2ckqf6t4sd2b"]
+
+[ext_resource type="PackedScene" uid="uid://dlkigjkkgy1y0" path="res://item/SM_Env_Cliff_Flat_05.fbx" id="1_wumhc"]
+
+[node name="IronNugget" instance=ExtResource("1_wumhc")]

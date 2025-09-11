@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://clqwe8n67da0l"]
+
+[ext_resource type="PackedScene" uid="uid://dmyu2owyce4ve" path="res://misc/SM_Env_Detail_Spikey_Group_01.fbx" id="1_vw05n"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_bvd2d"]
+
+[node name="Sandstone" instance=ExtResource("1_vw05n")]
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_bvd2d")

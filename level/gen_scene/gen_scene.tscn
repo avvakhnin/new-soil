@@ -1,0 +1,30 @@
+[gd_scene load_steps=9 format=3 uid="uid://wuxawx0vu2c2"]
+
+[ext_resource type="Script" uid="uid://cqqiay6udrhww" path="res://level/gen_scene/gen_scene.gd" id="1_5d5fe"]
+[ext_resource type="PackedScene" uid="uid://ddse0wnjal0n3" path="res://misc/crystal.tscn" id="2_fe8yo"]
+[ext_resource type="PackedScene" uid="uid://q7p2icmbo6ef" path="res://misc/iron_nugget.tscn" id="3_12r1d"]
+[ext_resource type="PackedScene" uid="uid://clqwe8n67da0l" path="res://misc/sandstone.tscn" id="4_phovh"]
+[ext_resource type="PackedScene" uid="uid://dmvl37nov3hq4" path="res://misc/tree.tscn" id="5_v7ued"]
+[ext_resource type="PackedScene" uid="uid://csiyji3ifm2ch" path="res://unit/pioneer/pioneer.tscn" id="6_12r1d"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0u8ef"]
+albedo_color = Color(0.4101944, 0.449426, 0.28817153, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sdb7u"]
+size = Vector2(100, 100)
+
+[node name="GenScene" type="Node3D"]
+script = ExtResource("1_5d5fe")
+miscs = Array[PackedScene]([ExtResource("2_fe8yo"), ExtResource("3_12r1d"), ExtResource("4_phovh"), ExtResource("5_v7ued")])
+
+[node name="Surface" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_0u8ef")
+mesh = SubResource("PlaneMesh_sdb7u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.49999997, 0.49999997, 0.70710677, -0.49999997, -0.49999997, 0.70710677, 0, 0, 0)
+
+[node name="Characters" parent="." instance=ExtResource("6_12r1d")]
+
+[node name="Camera3D" type="Camera3D" parent="Characters"]
+transform = Transform3D(1, 0, 0, 0, 0.7071067, 0.7071067, 0, -0.7071067, 0.7071067, 0, 5, 5)

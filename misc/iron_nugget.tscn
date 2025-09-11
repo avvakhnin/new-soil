@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://q7p2icmbo6ef"]
+
+[ext_resource type="PackedScene" uid="uid://d1krc2owlo3ya" path="res://misc/SM_Env_Cliff_Curved_02.fbx" id="1_wumhc"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_qg5ik"]
+radius = 1.0
+
+[node name="IronNugget" instance=ExtResource("1_wumhc")]
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_qg5ik")

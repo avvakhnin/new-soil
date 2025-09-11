@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://glpilg11apgo"]
+
+[ext_resource type="PackedScene" uid="uid://cct5ike7i2jkm" path="res://item/SM_Env_Floating_Crystal_02.fbx" id="1_qkm5g"]
+
+[node name="Crystal" instance=ExtResource("1_qkm5g")]
