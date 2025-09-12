@@ -41,12 +41,12 @@ _subresources={
 "materials": {
 "ScifiWorlds_MAT": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://unit/general_model/characters.tres",
+"use_external/fallback_path": "res://unit/general_model/character_material.tres",
 "use_external/path": "uid://dllgr87jhi5wk"
 },
 "Scifi_1a9": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://unit/general_model/characters.tres",
+"use_external/fallback_path": "res://unit/general_model/character_material.tres",
 "use_external/path": "uid://dllgr87jhi5wk"
 }
 },
