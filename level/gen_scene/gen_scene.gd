@@ -9,6 +9,5 @@ func _ready() -> void:
 		var x = randi_range(-50,50)		
 		var z = randi_range(-50,50)
 		misc.position  =Vector3(x, 0, z)		
-		#misc.scale = Vector3(0.1, 0.1, 0.1)
 		add_child(misc)
 	

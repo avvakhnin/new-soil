@@ -1,10 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dmvl37nov3hq4"]
+[gd_scene load_steps=5 format=3 uid="uid://dmvl37nov3hq4"]
 
 [ext_resource type="PackedScene" uid="uid://cob3cuwjis2nr" path="res://misc/SM_Env_Plant_Hallowed_01.fbx" id="1_xfhtm"]
+[ext_resource type="Script" uid="uid://cqkx53jjgq7b8" path="res://misc/resource_spot.gd" id="2_goxmg"]
+[ext_resource type="PackedScene" uid="uid://jw2mjfp5ts45" path="res://item/tree.tscn" id="3_51h1w"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_xfhtm"]
 
 [node name="Tree" instance=ExtResource("1_xfhtm")]
+script = ExtResource("2_goxmg")
+item_scene = ExtResource("3_51h1w")
 
 [node name="Area3D" type="Area3D" parent="." index="1"]
 

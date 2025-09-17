@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://q7p2icmbo6ef"]
+[gd_scene load_steps=5 format=3 uid="uid://q7p2icmbo6ef"]
 
 [ext_resource type="PackedScene" uid="uid://d1krc2owlo3ya" path="res://misc/SM_Env_Cliff_Curved_02.fbx" id="1_wumhc"]
+[ext_resource type="Script" uid="uid://cqkx53jjgq7b8" path="res://misc/resource_spot.gd" id="2_1fhba"]
+[ext_resource type="PackedScene" uid="uid://b2ckqf6t4sd2b" path="res://item/iron_nugget.tscn" id="3_0s35u"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_qg5ik"]
 radius = 1.0
 
 [node name="IronNugget" instance=ExtResource("1_wumhc")]
+script = ExtResource("2_1fhba")
+count = 2
+item_scene = ExtResource("3_0s35u")
 
 [node name="Area3D" type="Area3D" parent="." index="1"]
 

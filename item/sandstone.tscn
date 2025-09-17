@@ -1,5 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d3qn2xm61vfcx"]
+[gd_scene load_steps=3 format=3 uid="uid://d3qn2xm61vfcx"]
 
 [ext_resource type="PackedScene" uid="uid://dt1bokrocrs8l" path="res://item/SM_Env_Floating_Rocks_Spiral_01.fbx" id="1_76a73"]
+[ext_resource type="Script" uid="uid://ddmamnbxyj0gi" path="res://item/resource_iitem.gd" id="2_y717p"]
 
 [node name="Sandstone" instance=ExtResource("1_76a73")]
+script = ExtResource("2_y717p")
