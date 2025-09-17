@@ -7,8 +7,8 @@
 [ext_resource type="Animation" uid="uid://crcx5xuljiok5" path="res://unit/animation/walking.res" id="3_xjwrr"]
 [ext_resource type="Animation" uid="uid://b4727v3jvwk0h" path="res://unit/animation/running_1.res" id="4_x3ibb"]
 [ext_resource type="Script" uid="uid://bpyra2u3ko5dx" path="res://unit/pioneer/animation_player.gd" id="4_xjwrr"]
-[ext_resource type="Animation" uid="uid://dmdjy5vknxugu" path="res://unit/animation/running_2.res" id="5_xt8cr"]
-[ext_resource type="Animation" uid="uid://48gdhh7ru4jw" path="res://unit/animation/running_3.res" id="6_ngd65"]
+[ext_resource type="Animation" uid="uid://clcf886wq86cx" path="res://unit/animation/running_2.res" id="5_xt8cr"]
+[ext_resource type="Animation" uid="uid://crogs6kyhicnh" path="res://unit/animation/running_3.res" id="6_ngd65"]
 [ext_resource type="Animation" uid="uid://c5v8puidxmfn3" path="res://unit/animation/standing_melee_attack_downward.res" id="7_fnqoa"]
 [ext_resource type="Animation" uid="uid://6gg6uvmy04xs" path="res://unit/animation/idle.res" id="8_xt8cr"]
 
