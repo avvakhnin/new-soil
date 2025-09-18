@@ -61,6 +61,7 @@ var connected_areas: Array[ResourceSpot]
 func _on_area_3d_area_entered(area: Area3D) -> void:	
 	var misc = area.get_parent()
 	if misc is ResourceSpot: connected_areas.append(misc)
+	if misc is ResourceItem: $Backpack.add_resource(misc)
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
 	var misc = area.get_parent()

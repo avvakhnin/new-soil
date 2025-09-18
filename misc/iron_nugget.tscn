@@ -9,7 +9,6 @@ radius = 1.0
 
 [node name="IronNugget" instance=ExtResource("1_wumhc")]
 script = ExtResource("2_1fhba")
-count = 2
 item_scene = ExtResource("3_0s35u")
 
 [node name="Area3D" type="Area3D" parent="." index="1"]

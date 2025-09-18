@@ -3,7 +3,15 @@ class_name ResourceItem
 
 const SPEED = 10
 
+@export
+var type: String
+
+@export
+var count = 1
+
 var target_position: Vector3
+
+
 
 func _process(delta: float) -> void:
 	var direction:Vector3 = target_position - global_position
