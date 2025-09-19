@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddse0wnjal0n3"]
 
-[ext_resource type="PackedScene" uid="uid://dsg4dh6oo15o7" path="res://misc/SM_Env_Floating_Crystal_01.fbx" id="1_ubc8l"]
-[ext_resource type="Script" uid="uid://cqkx53jjgq7b8" path="res://misc/resource_spot.gd" id="2_yak3n"]
+[ext_resource type="PackedScene" uid="uid://dsg4dh6oo15o7" path="res://props/resource_spot/SM_Env_Floating_Crystal_01.fbx" id="1_ubc8l"]
+[ext_resource type="Script" uid="uid://cqkx53jjgq7b8" path="res://props/resource_spot/resource_spot.gd" id="2_yak3n"]
 [ext_resource type="PackedScene" uid="uid://glpilg11apgo" path="res://item/crystal.tscn" id="3_gs75u"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_ubc8l"]

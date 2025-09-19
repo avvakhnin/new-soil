@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cob3cuwjis2nr"
-path="res://.godot/imported/SM_Env_Plant_Hallowed_01.fbx-5f7f8e4ffe41e484a98f24252919d03e.scn"
+uid="uid://d1krc2owlo3ya"
+path="res://.godot/imported/SM_Env_Cliff_Curved_02.fbx-16b1c9b9320e70a1bd273824630a372a.scn"
 
 [deps]
 
-source_file="res://misc/SM_Env_Plant_Hallowed_01.fbx"
-dest_files=["res://.godot/imported/SM_Env_Plant_Hallowed_01.fbx-5f7f8e4ffe41e484a98f24252919d03e.scn"]
+source_file="res://props/resource_spot/SM_Env_Cliff_Curved_02.fbx"
+dest_files=["res://.godot/imported/SM_Env_Cliff_Curved_02.fbx-16b1c9b9320e70a1bd273824630a372a.scn"]
 
 [params]
 
@@ -28,7 +28,7 @@ meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
 meshes/force_disable_compression=false
 skins/use_named_skins=true
-animation/import=true
+animation/import=false
 animation/fps=30
 animation/trimming=true
 animation/remove_immutable_tracks=true
@@ -39,9 +39,9 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"Base_Lambert3": {
+"ScifiMat": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://misc/misc_material.tres",
+"use_external/fallback_path": "res://props/props_material.tres",
 "use_external/path": "uid://de7qtjw3tjkur"
 }
 },

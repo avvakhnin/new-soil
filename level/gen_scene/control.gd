@@ -47,22 +47,22 @@ func check_mode() :
 		
 func finish_chop():
 	await ($AnimationPlayer as AnimationPlayer).animation_finished
-	for misc: ResourceSpot in connected_areas:
-		var direction_to_area: Vector3 = misc.global_position - global_position
+	for spot: ResourceSpot in resource_spots:
+		var direction_to_area: Vector3 = spot.global_position - global_position
 		var angle:float = (-basis.z).angle_to(direction_to_area)
 		if angle > 0.75: continue
-		misc.create_item()
+		spot.create_item()
 		break
 	mode = IDLE
 		
 		
-var connected_areas: Array[ResourceSpot]
+var resource_spots: Array[ResourceSpot]
 
 func _on_area_3d_area_entered(area: Area3D) -> void:	
-	var misc = area.get_parent()
-	if misc is ResourceSpot: connected_areas.append(misc)
-	if misc is ResourceItem: $Backpack.add_resource(misc)
+	var handler = area.get_parent()
+	if handler is ResourceSpot: resource_spots.append(handler)
+	if handler is ResourceItem: $Backpack.add_resource(handler)
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
-	var misc = area.get_parent()
-	if misc is ResourceSpot: connected_areas.erase(misc)
+	var handler = area.get_parent()
+	if handler is ResourceSpot: resource_spots.erase(handler)
