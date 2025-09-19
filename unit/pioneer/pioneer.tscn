@@ -10,8 +10,8 @@
 [ext_resource type="Animation" uid="uid://clcf886wq86cx" path="res://unit/animation/running_2.res" id="5_xt8cr"]
 [ext_resource type="Animation" uid="uid://crogs6kyhicnh" path="res://unit/animation/running_3.res" id="6_ngd65"]
 [ext_resource type="Animation" uid="uid://c5v8puidxmfn3" path="res://unit/animation/standing_melee_attack_downward.res" id="7_fnqoa"]
-[ext_resource type="Animation" uid="uid://6gg6uvmy04xs" path="res://unit/animation/idle.res" id="8_xt8cr"]
-[ext_resource type="Script" uid="uid://8dr10sx3rhcn" path="res://unit/pioneer/backpack.gd" id="12_0ug4y"]
+[ext_resource type="Animation" uid="uid://dnvop8upi2ado" path="res://unit/animation/idle.res" id="8_xt8cr"]
+[ext_resource type="Script" uid="uid://8dr10sx3rhcn" path="res://unit/pioneer/storage.gd" id="12_0ug4y"]
 
 [sub_resource type="Animation" id="Animation_r72oy"]
 resource_name = "Take 001"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://d3qn2xm61vfcx"]
+[gd_scene load_steps=5 format=3 uid="uid://d3qn2xm61vfcx"]
 
 [ext_resource type="PackedScene" uid="uid://dt1bokrocrs8l" path="res://item/SM_Env_Floating_Rocks_Spiral_01.fbx" id="1_76a73"]
 [ext_resource type="Script" uid="uid://ddmamnbxyj0gi" path="res://item/resource_iitem.gd" id="2_y717p"]
+[ext_resource type="Script" uid="uid://8dr10sx3rhcn" path="res://unit/pioneer/storage.gd" id="3_yu5fw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_y717p"]
 radius = 0.3
@@ -14,3 +15,7 @@ type = "sand"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 shape = SubResource("SphereShape3D_y717p")
+
+[node name="Storage" type="Node" parent="." index="2"]
+script = ExtResource("3_yu5fw")
+metadata/_custom_type_script = "uid://8dr10sx3rhcn"

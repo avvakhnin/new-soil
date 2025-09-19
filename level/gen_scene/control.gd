@@ -61,7 +61,9 @@ var resource_spots: Array[ResourceSpot]
 func _on_area_3d_area_entered(area: Area3D) -> void:	
 	var handler = area.get_parent()
 	if handler is ResourceSpot: resource_spots.append(handler)
-	if handler is ResourceItem: $Backpack.add_resource(handler)
+	if handler is ResourceItem: 
+		$Backpack.add_storage((handler as ResourceItem).get_storage())
+		handler.queue_free()
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
 	var handler = area.get_parent()
