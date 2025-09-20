@@ -18,6 +18,18 @@ const ROTATE_SPEED = 1.
 var is_attack = false
 
 func _process(delta: float):
+	if Input.is_action_just_pressed("close_view"):
+		$Camera3D.move_close()
+	if Input.is_action_just_released("close_view"):
+		$Camera3D.move_far()
+	
+	
+	if Input.is_action_just_pressed("create_template"):
+		var template: Node3D = load("res://props/template/building_template.tscn").instantiate()
+		get_parent().add_child(template)
+		template.global_position = global_position + (-basis.z) * 10
+		template.global_rotation = global_rotation
+		
 	var prev_mode = mode
 	mode = check_mode()
 	$AnimationPlayer.play(mode_animations[mode])
@@ -47,16 +59,24 @@ func check_mode() :
 		
 func finish_chop():
 	await ($AnimationPlayer as AnimationPlayer).animation_finished
+	mode = IDLE
 	for spot: ResourceSpot in resource_spots:
 		var direction_to_area: Vector3 = spot.global_position - global_position
 		var angle:float = (-basis.z).angle_to(direction_to_area)
 		if angle > 0.75: continue
-		spot.create_item()
+		spot.create_items()
 		break
-	mode = IDLE
+	for template: BuildingTemplate in templates:
+		var direction_to_area: Vector3 = template.global_position - global_position
+		var angle:float = (-basis.z).angle_to(direction_to_area)
+		if angle > 0.75: continue
+		template.raise_progress(0.3)
+		break
 		
 		
 var resource_spots: Array[ResourceSpot]
+		
+var templates: Array[BuildingTemplate]
 
 func _on_area_3d_area_entered(area: Area3D) -> void:	
 	var handler = area.get_parent()
@@ -64,7 +84,10 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 	if handler is ResourceItem: 
 		$Backpack.add_storage((handler as ResourceItem).get_storage())
 		handler.queue_free()
+	if handler is BuildingTemplate: templates.append(handler)
+	
 
 func _on_area_3d_area_exited(area: Area3D) -> void:
 	var handler = area.get_parent()
 	if handler is ResourceSpot: resource_spots.erase(handler)
+	if handler is BuildingTemplate: templates.erase(handler)

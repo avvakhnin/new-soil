@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://djb1ci88yh2de"]
+
+[ext_resource type="Script" uid="uid://ba3rxyprm3wom" path="res://props/template/building_template.gd" id="1_lbu5u"]
+[ext_resource type="PackedScene" uid="uid://djcfd5ufjlnsy" path="res://props/building/base_hub.tscn" id="2_h0i18"]
+[ext_resource type="Script" uid="uid://8dr10sx3rhcn" path="res://unit/pioneer/storage.gd" id="2_pbmu8"]
+[ext_resource type="Material" uid="uid://ty0a8kksoe53" path="res://props/template/ready_template_material.tres" id="3_qnckr"]
+[ext_resource type="Material" uid="uid://c2wouio4ky68m" path="res://props/template/not_ready_template_material.tres" id="4_f15f5"]
+[ext_resource type="Script" uid="uid://d27kw7p027b6" path="res://props/template/blank_model.gd" id="5_3ro31"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_h0i18"]
+material = ExtResource("4_f15f5")
+size = Vector3(12, 5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pbmu8"]
+size = Vector3(14, 5, 12)
+
+[node name="BuildingTemplate" type="Node3D"]
+script = ExtResource("1_lbu5u")
+building_scene = ExtResource("2_h0i18")
+
+[node name="BlankModel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+mesh = SubResource("BoxMesh_h0i18")
+script = ExtResource("5_3ro31")
+ready_material = ExtResource("3_qnckr")
+
+[node name="Storage" type="Node" parent="."]
+script = ExtResource("2_pbmu8")
+metadata/_custom_type_script = "uid://8dr10sx3rhcn"
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+shape = SubResource("BoxShape3D_pbmu8")

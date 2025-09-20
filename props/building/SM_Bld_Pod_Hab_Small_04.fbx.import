@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bg4ftsstr6wlq"
-path="res://.godot/imported/SM_Bld_Pod_Hab_Small_04.fbx-e497a0775b3e87e9e843975e6541020d.scn"
+path="res://.godot/imported/SM_Bld_Pod_Hab_Small_04.fbx-3f7cdd9e401cad351c777be3cebf7701.scn"
 
 [deps]
 
-source_file="res://level/gen_scene/SM_Bld_Pod_Hab_Small_04.fbx"
-dest_files=["res://.godot/imported/SM_Bld_Pod_Hab_Small_04.fbx-e497a0775b3e87e9e843975e6541020d.scn"]
+source_file="res://props/building/SM_Bld_Pod_Hab_Small_04.fbx"
+dest_files=["res://.godot/imported/SM_Bld_Pod_Hab_Small_04.fbx-3f7cdd9e401cad351c777be3cebf7701.scn"]
 
 [params]
 
@@ -39,9 +39,14 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
+"Glass_MAT": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://props/building/glass_material.tres",
+"use_external/path": "uid://dfujbpve25ui7"
+},
 "POD_SHD:SciFi_Planets_POD_SHD": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://misc/misc_material.tres",
+"use_external/fallback_path": "res://props/props_material.tres",
 "use_external/path": "uid://de7qtjw3tjkur"
 }
 }

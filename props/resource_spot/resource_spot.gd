@@ -7,15 +7,14 @@ var count = 10
 @export
 var item_scene: PackedScene
 
-var tick = 0.
-func _process(delta: float) -> void:
-	tick += 0
-	if tick > 2 :
-		tick -= 2
-		if count > 0 :
-			create_item()
 
+func create_items() -> void:
+	var item_count = clampi( randi_range(1, 3), 1, count)
+	for i in item_count:
+		create_item()
+	
 func create_item() -> void:
+	
 	var item:ResourceItem = item_scene.instantiate()
 	get_parent().add_child(item)
 	item.position = position
