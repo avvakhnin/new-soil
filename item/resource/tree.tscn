@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://jw2mjfp5ts45"]
 
-[ext_resource type="PackedScene" uid="uid://dfplutn6crtcl" path="res://item/SM_Env_Plant_Hallowed_03.fbx" id="1_ge020"]
-[ext_resource type="Script" uid="uid://ddmamnbxyj0gi" path="res://item/resource_iitem.gd" id="2_c3nph"]
+[ext_resource type="PackedScene" uid="uid://dfplutn6crtcl" path="res://item/resource/SM_Env_Plant_Hallowed_03.fbx" id="1_ge020"]
+[ext_resource type="Script" uid="uid://ddmamnbxyj0gi" path="res://item/resource/resource_iitem.gd" id="2_c3nph"]
 [ext_resource type="Script" uid="uid://8dr10sx3rhcn" path="res://unit/pioneer/storage.gd" id="3_u3usi"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_c3nph"]
@@ -9,7 +9,6 @@ radius = 0.3
 
 [node name="Tree" instance=ExtResource("1_ge020")]
 script = ExtResource("2_c3nph")
-type = "tree"
 
 [node name="Area3D" type="Area3D" parent="." index="1"]
 

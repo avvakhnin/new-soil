@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dt1bokrocrs8l"
-path="res://.godot/imported/SM_Env_Floating_Rocks_Spiral_01.fbx-2ebd708d3cbe1873ff360bda686459d2.scn"
+uid="uid://76seuqw8fa0"
+path="res://.godot/imported/SM_Wep_SmallAxe_03.fbx-4e33133e9a83d0603b8e5eb77f621afb.scn"
 
 [deps]
 
-source_file="res://item/SM_Env_Floating_Rocks_Spiral_01.fbx"
-dest_files=["res://.godot/imported/SM_Env_Floating_Rocks_Spiral_01.fbx-2ebd708d3cbe1873ff360bda686459d2.scn"]
+source_file="res://item/resource/SM_Wep_SmallAxe_03.fbx"
+dest_files=["res://.godot/imported/SM_Wep_SmallAxe_03.fbx-4e33133e9a83d0603b8e5eb77f621afb.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=0.02
+nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -39,7 +39,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"ScifiMat": {
+"SciFiCrate_MAT": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://item/item_material.tres",
 "use_external/path": "uid://u3st8os023fw"

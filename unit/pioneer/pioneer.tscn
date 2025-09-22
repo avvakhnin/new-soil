@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://vdi7a75nkreg" path="res://unit/general_model/Characters.fbx" id="1_ooom4"]
 [ext_resource type="Animation" uid="uid://kyn3t56iix6f" path="res://unit/animation/gunplay.res" id="2_62bgr"]
 [ext_resource type="Script" uid="uid://na4j8pfuu5u0" path="res://level/gen_scene/control.gd" id="2_fnqoa"]
-[ext_resource type="PackedScene" uid="uid://76seuqw8fa0" path="res://item/SM_Wep_SmallAxe_03.fbx" id="2_ngd65"]
+[ext_resource type="PackedScene" uid="uid://76seuqw8fa0" path="res://item/resource/SM_Wep_SmallAxe_03.fbx" id="2_ngd65"]
 [ext_resource type="Animation" uid="uid://crcx5xuljiok5" path="res://unit/animation/walking.res" id="3_xjwrr"]
 [ext_resource type="Animation" uid="uid://b4727v3jvwk0h" path="res://unit/animation/running_1.res" id="4_x3ibb"]
 [ext_resource type="Script" uid="uid://bpyra2u3ko5dx" path="res://unit/pioneer/animation_player.gd" id="4_xjwrr"]

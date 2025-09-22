@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dlkigjkkgy1y0"
-path="res://.godot/imported/SM_Env_Cliff_Flat_05.fbx-ab79ce13ae16518aae4e1e449b409f6a.scn"
+uid="uid://cct5ike7i2jkm"
+path="res://.godot/imported/SM_Env_Floating_Crystal_02.fbx-d20e87fbee2aaaee20626a16adcdeecf.scn"
 
 [deps]
 
-source_file="res://item/SM_Env_Cliff_Flat_05.fbx"
-dest_files=["res://.godot/imported/SM_Env_Cliff_Flat_05.fbx-ab79ce13ae16518aae4e1e449b409f6a.scn"]
+source_file="res://item/resource/SM_Env_Floating_Crystal_02.fbx"
+dest_files=["res://.godot/imported/SM_Env_Floating_Crystal_02.fbx-d20e87fbee2aaaee20626a16adcdeecf.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=0.00999999999999999
+nodes/root_scale=0.07
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true

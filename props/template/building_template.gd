@@ -8,7 +8,7 @@ var is_ready_for_build = false
 
 func _ready() -> void:
 	$BlankModel.recalc_size(progress)
-	await get_tree().create_timer(10).timeout
+	await get_tree().create_timer(3).timeout
 	is_ready_for_build = true
 	$BlankModel.set_ready()
 

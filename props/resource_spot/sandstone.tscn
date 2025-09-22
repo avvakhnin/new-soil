@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://dmyu2owyce4ve" path="res://props/resource_spot/SM_Env_Detail_Spikey_Group_01.fbx" id="1_vw05n"]
 [ext_resource type="Script" uid="uid://cqkx53jjgq7b8" path="res://props/resource_spot/resource_spot.gd" id="2_uvsb6"]
-[ext_resource type="PackedScene" uid="uid://d3qn2xm61vfcx" path="res://item/sandstone.tscn" id="3_hwq3d"]
+[ext_resource type="PackedScene" uid="uid://d3qn2xm61vfcx" path="res://item/resource/sandstone.tscn" id="3_hwq3d"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_bvd2d"]
 

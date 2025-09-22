@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d3qn2xm61vfcx"]
 
-[ext_resource type="PackedScene" uid="uid://dt1bokrocrs8l" path="res://item/SM_Env_Floating_Rocks_Spiral_01.fbx" id="1_76a73"]
-[ext_resource type="Script" uid="uid://ddmamnbxyj0gi" path="res://item/resource_iitem.gd" id="2_y717p"]
+[ext_resource type="PackedScene" uid="uid://dt1bokrocrs8l" path="res://item/resource/SM_Env_Floating_Rocks_Spiral_01.fbx" id="1_76a73"]
+[ext_resource type="Script" uid="uid://ddmamnbxyj0gi" path="res://item/resource/resource_iitem.gd" id="2_y717p"]
 [ext_resource type="Script" uid="uid://8dr10sx3rhcn" path="res://unit/pioneer/storage.gd" id="3_yu5fw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_y717p"]
@@ -9,7 +9,6 @@ radius = 0.3
 
 [node name="Sandstone" instance=ExtResource("1_76a73")]
 script = ExtResource("2_y717p")
-type = "sand"
 
 [node name="Area3D" type="Area3D" parent="." index="1"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://glpilg11apgo"]
 
-[ext_resource type="PackedScene" uid="uid://cct5ike7i2jkm" path="res://item/SM_Env_Floating_Crystal_02.fbx" id="1_qkm5g"]
-[ext_resource type="Script" uid="uid://ddmamnbxyj0gi" path="res://item/resource_iitem.gd" id="2_vwjju"]
+[ext_resource type="PackedScene" uid="uid://cct5ike7i2jkm" path="res://item/resource/SM_Env_Floating_Crystal_02.fbx" id="1_qkm5g"]
+[ext_resource type="Script" uid="uid://ddmamnbxyj0gi" path="res://item/resource/resource_iitem.gd" id="2_vwjju"]
 [ext_resource type="Script" uid="uid://8dr10sx3rhcn" path="res://unit/pioneer/storage.gd" id="3_tbpl7"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vwjju"]
@@ -9,7 +9,6 @@ radius = 0.3
 
 [node name="Crystal" instance=ExtResource("1_qkm5g")]
 script = ExtResource("2_vwjju")
-type = "crystal"
 
 [node name="Area3D" type="Area3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

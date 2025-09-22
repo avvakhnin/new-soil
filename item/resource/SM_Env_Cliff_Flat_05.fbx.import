@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dfplutn6crtcl"
-path="res://.godot/imported/SM_Env_Plant_Hallowed_03.fbx-fe1c4448d02b4bd5bd6022d59c126988.scn"
+uid="uid://dlkigjkkgy1y0"
+path="res://.godot/imported/SM_Env_Cliff_Flat_05.fbx-b4f48e85bb3bfb774f720d67db09d60d.scn"
 
 [deps]
 
-source_file="res://item/SM_Env_Plant_Hallowed_03.fbx"
-dest_files=["res://.godot/imported/SM_Env_Plant_Hallowed_03.fbx-fe1c4448d02b4bd5bd6022d59c126988.scn"]
+source_file="res://item/resource/SM_Env_Cliff_Flat_05.fbx"
+dest_files=["res://.godot/imported/SM_Env_Cliff_Flat_05.fbx-b4f48e85bb3bfb774f720d67db09d60d.scn"]
 
 [params]
 
@@ -17,7 +17,7 @@ nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
 nodes/apply_root_scale=true
-nodes/root_scale=0.05
+nodes/root_scale=0.00999999999999999
 nodes/import_as_skeleton_bones=false
 nodes/use_name_suffixes=true
 nodes/use_node_type_suffixes=true
@@ -39,7 +39,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "materials": {
-"Base_Lambert3": {
+"ScifiMat": {
 "use_external/enabled": true,
 "use_external/fallback_path": "res://item/item_material.tres",
 "use_external/path": "uid://u3st8os023fw"
