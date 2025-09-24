@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcan5h23tdw17"]
+
+[ext_resource type="Material" uid="uid://maa1wvudil0c" path="res://item/weapon/antidron_material.tres" id="1_ys8d5"]
+[ext_resource type="PackedScene" uid="uid://do4qfwfd8m3e2" path="res://level/beam_test_scene/beam.tscn" id="2_lpi1v"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_81g1g"]
+size = Vector3(0.02, 0.1, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0hqnd"]
+size = Vector3(0.07, 0.1, 0.7)
+
+[node name="Antidron" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_ys8d5")
+mesh = SubResource("BoxMesh_81g1g")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -0.2)
+material_override = ExtResource("1_ys8d5")
+mesh = SubResource("BoxMesh_0hqnd")
+
+[node name="Beam" parent="." instance=ExtResource("2_lpi1v")]
+transform = Transform3D(1.0001222, 6.7055225e-08, 4.0978193e-08, -3.1664968e-08, 4.4703484e-08, -1.0005327, 0, 1.0005608, 1.1175871e-08, 0, 0.1, -0.55)

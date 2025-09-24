@@ -1,12 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://wuxawx0vu2c2"]
+[gd_scene load_steps=10 format=3 uid="uid://dfi3p1tk4byg1"]
 
-[ext_resource type="Script" uid="uid://cqqiay6udrhww" path="res://level/gen_scene/gen_scene.gd" id="1_5d5fe"]
-[ext_resource type="PackedScene" uid="uid://ddse0wnjal0n3" path="res://props/resource_spot/crystal.tscn" id="2_fe8yo"]
-[ext_resource type="PackedScene" uid="uid://q7p2icmbo6ef" path="res://props/resource_spot/iron_nugget.tscn" id="3_12r1d"]
-[ext_resource type="PackedScene" uid="uid://clqwe8n67da0l" path="res://props/resource_spot/sandstone.tscn" id="4_phovh"]
-[ext_resource type="PackedScene" uid="uid://dmvl37nov3hq4" path="res://props/resource_spot/tree.tscn" id="5_v7ued"]
-[ext_resource type="PackedScene" uid="uid://csiyji3ifm2ch" path="res://unit/pioneer/pioneer.tscn" id="6_12r1d"]
-[ext_resource type="Script" uid="uid://cdx7t3iljg7o8" path="res://level/gen_scene/camera_3d.gd" id="7_phovh"]
+[ext_resource type="Script" uid="uid://cuw0cs88oma47" path="res://level/beam_test_scene/beam_test_scene.gd" id="1_wfyp8"]
+[ext_resource type="PackedScene" uid="uid://c7hdkrlhg5fr5" path="res://level/beam_test_scene/beam_target.tscn" id="6_nfu8b"]
+[ext_resource type="PackedScene" uid="uid://csiyji3ifm2ch" path="res://unit/pioneer/pioneer.tscn" id="7_c0ekd"]
+[ext_resource type="Script" uid="uid://cdx7t3iljg7o8" path="res://level/gen_scene/camera_3d.gd" id="8_ovkpy"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_phovh"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -27,12 +24,14 @@ albedo_color = Color(0.4101944, 0.449426, 0.28817153, 1)
 [sub_resource type="PlaneMesh" id="PlaneMesh_sdb7u"]
 size = Vector2(100, 100)
 
-[node name="GenScene" type="Node3D"]
-script = ExtResource("1_5d5fe")
-props = Array[PackedScene]([ExtResource("2_fe8yo"), ExtResource("3_12r1d"), ExtResource("4_phovh"), ExtResource("5_v7ued")])
+[node name="BeamTestScene" type="Node3D"]
+script = ExtResource("1_wfyp8")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_kn7w0")
+
+[node name="BeamTarget" parent="WorldEnvironment" instance=ExtResource("6_nfu8b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4792705, -10.770991)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -42,8 +41,8 @@ shadow_enabled = true
 material_override = SubResource("StandardMaterial3D_0u8ef")
 mesh = SubResource("PlaneMesh_sdb7u")
 
-[node name="Characters" parent="." instance=ExtResource("6_12r1d")]
+[node name="Characters" parent="." instance=ExtResource("7_c0ekd")]
 
 [node name="Camera3D" type="Camera3D" parent="Characters"]
 transform = Transform3D(1, 0, 0, 0, 0.9659257, 0.258819, 0, -0.258819, 0.9659257, 0, 2, 1)
-script = ExtResource("7_phovh")
+script = ExtResource("8_ovkpy")
