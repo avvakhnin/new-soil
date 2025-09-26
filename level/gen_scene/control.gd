@@ -38,7 +38,8 @@ func _process(delta: float):
 
 	var prev_mode = mode
 	mode = check_mode()
-	$AnimationPlayer.play(get_animation(mode, curent_weapon_num))
+	if mode != prev_mode:
+		$AnimationPlayer.play(get_animation(mode, curent_weapon_num))
 	if mode == CHOP && prev_mode!= CHOP:
 		register_finish_chop()
 	if mode == WALK || mode == RUN:
@@ -63,7 +64,10 @@ func check_mode() :
 		
 func register_finish_chop():
 	await ($AnimationPlayer as AnimationPlayer).animation_finished
+	$Skeleton/BoneAttachment3D.get_child(curent_weapon_num).launch()
+	await get_tree().create_timer(1).timeout
 	mode = IDLE
+	$AnimationPlayer.play(get_animation(mode, curent_weapon_num))
 	for spot: ResourceSpot in resource_spots:
 		var direction_to_area: Vector3 = spot.global_position - global_position
 		var angle:float = (-basis.z).angle_to(direction_to_area)
