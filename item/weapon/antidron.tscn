@@ -1,14 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkllx1thg3ub"]
+[gd_scene load_steps=6 format=3 uid="uid://bkllx1thg3ub"]
 
-[ext_resource type="Script" uid="uid://bhl5yt2pahdf8" path="res://item/weapon/antidron.gd" id="1_c6abw"]
-[ext_resource type="Material" uid="uid://maa1wvudil0c" path="res://item/weapon/antidron_material.tres" id="1_nw0dm"]
-[ext_resource type="Script" uid="uid://bc7uxmpd1b0wn" path="res://item/weapon/antidron_beam.gd" id="2_0hqnd"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_81g1g"]
-size = Vector3(0.02, 0.1, 0.2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_0hqnd"]
-size = Vector3(0.07, 0.1, 0.7)
+[ext_resource type="Script" path="res://item/weapon/antidron.gd" id="1_c6abw"]
+[ext_resource type="Script" path="res://item/weapon/antidron_beam.gd" id="2_0hqnd"]
+[ext_resource type="PackedScene" uid="uid://eapugrgeq0rt" path="res://item/weapon/SM_Wep_Heavy_01.fbx" id="4_n2587"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_c6abw"]
 flip_faces = true
@@ -28,17 +22,8 @@ emission_energy_multiplier = 7.0
 [node name="Antidron" type="Node3D"]
 script = ExtResource("1_c6abw")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = ExtResource("1_nw0dm")
-mesh = SubResource("BoxMesh_81g1g")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, -0.2)
-material_override = ExtResource("1_nw0dm")
-mesh = SubResource("BoxMesh_0hqnd")
-
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.11824667, -0.54910654)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.1825529, -0.62339133)
 visible = false
 collide_with_areas = true
 script = ExtResource("2_0hqnd")
@@ -46,3 +31,6 @@ script = ExtResource("2_0hqnd")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RayCast3D"]
 mesh = SubResource("CylinderMesh_c6abw")
 surface_material_override/0 = SubResource("StandardMaterial3D_0hqnd")
+
+[node name="SM_Wep_Heavy_01" parent="." instance=ExtResource("4_n2587")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

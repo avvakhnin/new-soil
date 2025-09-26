@@ -1,28 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://vyr752dyk232"]
+[gd_scene load_steps=3 format=3 uid="uid://vyr752dyk232"]
 
-[ext_resource type="Material" uid="uid://jcc1fat0okim" path="res://item/weapon/needler_material.tres" id="1_3iycy"]
-[ext_resource type="Script" uid="uid://dyvv2xpaib2rs" path="res://item/weapon/needler.gd" id="1_81g1g"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_81g1g"]
-size = Vector3(0.02, 0.1, 0.2)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_raxv2"]
-top_radius = 0.03
-bottom_radius = 0.02
-height = 0.3
-radial_segments = 8
+[ext_resource type="Script" path="res://item/weapon/needler.gd" id="1_81g1g"]
+[ext_resource type="PackedScene" uid="uid://dosq1vk7x3gu6" path="res://item/weapon/SM_Wep_Assault_03.fbx" id="3_raxv2"]
 
 [node name="Needler" type="Node3D"]
 script = ExtResource("1_81g1g")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = ExtResource("1_3iycy")
-mesh = SubResource("BoxMesh_81g1g")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.05, -0.1)
-material_override = ExtResource("1_3iycy")
-mesh = SubResource("CylinderMesh_raxv2")
-
 [node name="LaunchPoint" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.054103382, 0.024383307)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10801337, -0.32158017)
+
+[node name="SM_Wep_Assault_03" parent="." instance=ExtResource("3_raxv2")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

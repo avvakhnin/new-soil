@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dcan5h23tdw17"]
 
-[ext_resource type="Material" uid="uid://maa1wvudil0c" path="res://item/weapon/antidron_material.tres" id="1_ys8d5"]
+[ext_resource type="Material" uid="uid://maa1wvudil0c" path="res://item/weapon/antidron_beam_material.tres" id="1_ys8d5"]
 [ext_resource type="PackedScene" uid="uid://do4qfwfd8m3e2" path="res://level/beam_test_scene/beam.tscn" id="2_lpi1v"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_81g1g"]
