@@ -1,0 +1,52 @@
+[gd_scene load_steps=9 format=3 uid="uid://bl8byc2qxypxn"]
+
+[ext_resource type="PackedScene" uid="uid://dwiu35xq2nvrr" path="res://unit/uav/uav.tscn" id="3_gqp36"]
+[ext_resource type="PackedScene" uid="uid://csiyji3ifm2ch" path="res://unit/pioneer/pioneer.tscn" id="6_ryg62"]
+[ext_resource type="Script" uid="uid://cdx7t3iljg7o8" path="res://level/gen_scene/camera_3d.gd" id="7_f5dqc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_phovh"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_v7ued"]
+sky_material = SubResource("ProceduralSkyMaterial_phovh")
+
+[sub_resource type="Environment" id="Environment_kn7w0"]
+background_mode = 2
+sky = SubResource("Sky_v7ued")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0u8ef"]
+albedo_color = Color(0.4101944, 0.449426, 0.28817153, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sdb7u"]
+size = Vector2(100, 100)
+
+[node name="FightScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_kn7w0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Surface" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_0u8ef")
+mesh = SubResource("PlaneMesh_sdb7u")
+
+[node name="Characters" parent="." instance=ExtResource("6_ryg62")]
+
+[node name="Camera3D" type="Camera3D" parent="Characters"]
+transform = Transform3D(1, 0, 0, 0, 0.9659257, 0.258819, 0, -0.258819, 0.9659257, 0, 2, 1)
+script = ExtResource("7_f5dqc")
+
+[node name="UAV1" parent="." instance=ExtResource("3_gqp36")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.8746855, -47.899643)
+
+[node name="UAV2" parent="." instance=ExtResource("3_gqp36")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -9.923275, 3.749371, -64.639755)
+
+[node name="UAV3" parent="." instance=ExtResource("3_gqp36")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.439754, 5.624057, -23.439175)
