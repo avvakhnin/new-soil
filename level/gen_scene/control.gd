@@ -65,7 +65,7 @@ func check_mode() :
 func register_finish_chop():
 	await ($AnimationPlayer as AnimationPlayer).animation_finished
 	$Skeleton/BoneAttachment3D.get_child(curent_weapon_num).launch()
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(10).timeout
 	mode = IDLE
 	$AnimationPlayer.play(get_animation(mode, curent_weapon_num))
 	for spot: ResourceSpot in resource_spots:

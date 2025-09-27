@@ -1,9 +1,21 @@
 class_name UAV extends Node3D
 
+enum {OWN_CONTROL, OUTER_CONTROL}
+
+var control_mode = OWN_CONTROL
+
 var speed = Vector3.FORWARD*1
 
 func _process(delta: float) -> void:
-	transform = transform.translated_local( speed * delta)
+	if control_mode == OWN_CONTROL:
+		transform = transform.translated_local( speed * delta)
+		
+func catch() -> void:
+	control_mode = OUTER_CONTROL
+	
+	
+func freedom() -> void:
+	control_mode = OWN_CONTROL
 	
 func exploide() -> void:
 	$SM_Ship_Block_01.hide()

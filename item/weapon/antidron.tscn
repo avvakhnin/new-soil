@@ -24,7 +24,7 @@ script = ExtResource("1_c6abw")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.1825529, -0.62339133)
-visible = false
+target_position = Vector3(0, -100, 0)
 collide_with_areas = true
 script = ExtResource("2_0hqnd")
 
