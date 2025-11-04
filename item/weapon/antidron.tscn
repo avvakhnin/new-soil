@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkllx1thg3ub"]
+[gd_scene load_steps=7 format=3 uid="uid://bkllx1thg3ub"]
 
-[ext_resource type="Script" path="res://item/weapon/antidron.gd" id="1_c6abw"]
-[ext_resource type="Script" path="res://item/weapon/antidron_beam.gd" id="2_0hqnd"]
+[ext_resource type="Script" uid="uid://bhl5yt2pahdf8" path="res://item/weapon/antidron.gd" id="1_c6abw"]
+[ext_resource type="Script" uid="uid://bc7uxmpd1b0wn" path="res://item/weapon/antidron_beam.gd" id="2_0hqnd"]
 [ext_resource type="PackedScene" uid="uid://eapugrgeq0rt" path="res://item/weapon/SM_Wep_Heavy_01.fbx" id="4_n2587"]
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_c6abw"]
@@ -19,11 +19,17 @@ emission_enabled = true
 emission = Color(0.13333334, 0.34509805, 0.39607844, 1)
 emission_energy_multiplier = 7.0
 
+[sub_resource type="SphereMesh" id="SphereMesh_c6abw"]
+material = SubResource("StandardMaterial3D_0hqnd")
+radius = 1.5
+height = 2.0
+
 [node name="Antidron" type="Node3D"]
 script = ExtResource("1_c6abw")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.1825529, -0.62339133)
+visible = false
 target_position = Vector3(0, -100, 0)
 collide_with_areas = true
 script = ExtResource("2_0hqnd")
@@ -31,6 +37,10 @@ script = ExtResource("2_0hqnd")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RayCast3D"]
 mesh = SubResource("CylinderMesh_c6abw")
 surface_material_override/0 = SubResource("StandardMaterial3D_0hqnd")
+
+[node name="CatchSphere" type="MeshInstance3D" parent="RayCast3D"]
+visible = false
+mesh = SubResource("SphereMesh_c6abw")
 
 [node name="SM_Wep_Heavy_01" parent="." instance=ExtResource("4_n2587")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

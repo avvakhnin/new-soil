@@ -1,0 +1,89 @@
+[gd_scene load_steps=12 format=3 uid="uid://vu0vg3tekxua"]
+
+[ext_resource type="Script" uid="uid://cl7p5or7ady1b" path="res://level/transform_test/fly.gd" id="1_dtc5c"]
+[ext_resource type="Script" uid="uid://bfsy2nxrgjda7" path="res://level/transform_test/rotate_mesh.gd" id="2_5dlj7"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_dtc5c"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_5dlj7"]
+sky_material = SubResource("ProceduralSkyMaterial_dtc5c")
+
+[sub_resource type="Environment" id="Environment_0rpq4"]
+background_mode = 2
+sky = SubResource("Sky_5dlj7")
+tonemap_mode = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_5dlj7"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0rpq4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_7rlyx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dtc5c"]
+size = Vector3(0.7, 0.7, 0.7)
+
+[sub_resource type="SphereMesh" id="SphereMesh_0rpq4"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_klxqu"]
+
+[node name="TransformTest" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0rpq4")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Target" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0, 0)
+mesh = SubResource("SphereMesh_5dlj7")
+
+[node name="Fly2" type="MeshInstance3D" parent="Target" node_paths=PackedStringArray("target")]
+transform = Transform3D(0.6364822, -0.77129143, 0, 0.77129143, 0.6364822, 0, 0, 0, 1, 6.611, 15.138, 5)
+mesh = SubResource("CapsuleMesh_0rpq4")
+script = ExtResource("1_dtc5c")
+target = NodePath("..")
+
+[node name="Head1" type="MeshInstance3D" parent="Target/Fly2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.7, -0.5)
+mesh = SubResource("SphereMesh_7rlyx")
+skeleton = NodePath("../Head2")
+
+[node name="Head2" type="MeshInstance3D" parent="Target/Fly2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.7, -0.5)
+mesh = SubResource("BoxMesh_dtc5c")
+skeleton = NodePath("../../Fly2")
+
+[node name="Fly" type="MeshInstance3D" parent="Target" node_paths=PackedStringArray("target")]
+transform = Transform3D(0.90456676, -0.42633194, 0, 0.42633194, 0.90456676, 0, 0, 0, 1, 5, 0, 0)
+mesh = SubResource("CapsuleMesh_0rpq4")
+skeleton = NodePath("../..")
+script = ExtResource("1_dtc5c")
+target = NodePath("..")
+
+[node name="Head1" type="MeshInstance3D" parent="Target/Fly"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3, 0.7, -0.5)
+mesh = SubResource("SphereMesh_7rlyx")
+skeleton = NodePath("../Head2")
+
+[node name="Head2" type="MeshInstance3D" parent="Target/Fly"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, 0.7, -0.5)
+mesh = SubResource("BoxMesh_dtc5c")
+
+[node name="RotateMesh" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("SphereMesh_0rpq4")
+script = ExtResource("2_5dlj7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RotateMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 0)
+mesh = SubResource("SphereMesh_klxqu")
+skeleton = NodePath("../..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 10, 0)
+projection = 1
+size = 40.0

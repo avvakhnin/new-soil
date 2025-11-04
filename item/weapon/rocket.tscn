@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2x5vbxq4stli"]
+[gd_scene load_steps=10 format=3 uid="uid://c2x5vbxq4stli"]
 
 [ext_resource type="Script" uid="uid://csrfyaqdxmj4q" path="res://item/weapon/rocket.gd" id="1_rjocp"]
 [ext_resource type="PackedScene" uid="uid://b1axo3n3amryj" path="res://item/weapon/SM_Wep_Missile_01.fbx" id="2_8qmto"]
@@ -15,21 +15,11 @@ particles_anim_h_frames = 1
 particles_anim_v_frames = 1
 particles_anim_loop = false
 
-[sub_resource type="Curve" id="Curve_rjocp"]
-_data = [Vector2(0, 0.4958381), 0.0, 0.0, 0, 0, Vector2(0.25, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_8qmto"]
-curve = SubResource("Curve_rjocp")
-
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_87wir"]
 emission_shape = 1
 emission_sphere_radius = 0.04
-spread = 15.0
-initial_velocity_min = 1.0
-initial_velocity_max = 1.0
+direction = Vector3(0, 0, 0)
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_8qmto")
 
 [sub_resource type="QuadMesh" id="QuadMesh_8qmto"]
 size = Vector2(0.04, 0.02)

@@ -4,7 +4,7 @@ enum {OWN_CONTROL, OUTER_CONTROL}
 
 var control_mode = OWN_CONTROL
 
-var speed = Vector3.FORWARD*1
+@export var speed = Vector3.FORWARD*1
 
 func _process(delta: float) -> void:
 	if control_mode == OWN_CONTROL:
@@ -12,6 +12,7 @@ func _process(delta: float) -> void:
 		
 func catch() -> void:
 	control_mode = OUTER_CONTROL
+	speed = Vector3.ZERO
 	
 	
 func freedom() -> void:

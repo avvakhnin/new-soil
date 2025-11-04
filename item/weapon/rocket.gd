@@ -1,15 +1,19 @@
 extends Node3D
 
 var speed = Vector3.FORWARD*10
+var rotate_speed = 1.9
 var target: UAV
 
 func _ready() -> void:
+	rotate(Vector3.FORWARD, PI)
 	await get_tree().create_timer(100).timeout
 	queue_free()
 
 func _process(delta: float) -> void:
-	if target != null: look_at(target.global_position)
-	
+	if target != null:
+		RotationHelper.rotate_to_target(self, target.global_position, rotate_speed * delta)
+
+		
 	transform = transform.translated_local( speed * delta)
 	
 	if  target != null && (target.position - position).length_squared() < 0.1: 
@@ -24,3 +28,5 @@ func _process(delta: float) -> void:
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
 	if target == null && area.get_parent() is UAV: target = area.get_parent()
+
+	

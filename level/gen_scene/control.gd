@@ -17,15 +17,17 @@ const ROTATE_SPEED = 1.
 var is_attack = false
 
 func _ready() -> void:
-	for weapon:int in range($Skeleton/BoneAttachment3D.get_child_count()):
-		$Skeleton/BoneAttachment3D.get_child(weapon).hide()
+	for weapon:int in range($Skeleton/BoneAttachment3D/RotatePoint.get_child_count()):
+		$Skeleton/BoneAttachment3D/RotatePoint.get_child(weapon).hide()
 	switch_weapon()
 
+var attack_pressed = false
 func _process(delta: float):
 	if Input.is_action_just_pressed("close_view"):
 		$Camera3D.move_close()
 	if Input.is_action_just_released("close_view"):
 		$Camera3D.move_far()
+		
 
 	if Input.is_action_just_pressed("create_template"):
 		var template: Node3D = load("res://props/template/building_template.tscn").instantiate()
@@ -55,6 +57,7 @@ func check_mode() :
 	if mode == CHOP:
 		return CHOP
 	if mode == IDLE && Input.is_action_just_pressed("attack"):
+		attack_pressed = true
 		return CHOP
 	elif (mode == IDLE || mode == WALK || mode == RUN ) \
 	&& (Input.is_action_pressed("forward") || Input.is_action_pressed("back")):
@@ -64,22 +67,16 @@ func check_mode() :
 		
 func register_finish_chop():
 	await ($AnimationPlayer as AnimationPlayer).animation_finished
-	$Skeleton/BoneAttachment3D.get_child(curent_weapon_num).launch()
-	await get_tree().create_timer(10).timeout
+	$Skeleton/BoneAttachment3D/RotatePoint.get_child(curent_weapon_num).launch()
+	while true:
+		if Input.is_action_pressed("attack"):
+			await get_tree().create_timer(0.5).timeout
+		else:
+			break
+	
 	mode = IDLE
 	$AnimationPlayer.play(get_animation(mode, curent_weapon_num))
-	for spot: ResourceSpot in resource_spots:
-		var direction_to_area: Vector3 = spot.global_position - global_position
-		var angle:float = (-basis.z).angle_to(direction_to_area)
-		if angle > 0.75: continue
-		spot.create_items()
-		break
-	for template: BuildingTemplate in templates:
-		var direction_to_area: Vector3 = template.global_position - global_position
-		var angle:float = (-basis.z).angle_to(direction_to_area)
-		if angle > 0.75: continue
-		template.raise_progress(0.3)
-		break
+
 
 var resource_spots: Array[ResourceSpot]
 
@@ -100,11 +97,11 @@ func _on_area_3d_area_exited(area: Area3D) -> void:
 
 var curent_weapon_num = 0
 func switch_weapon():
-	$Skeleton/BoneAttachment3D.get_child(curent_weapon_num).hide()
+	$Skeleton/BoneAttachment3D/RotatePoint.get_child(curent_weapon_num).hide()
 	curent_weapon_num +=1
-	if curent_weapon_num == $Skeleton/BoneAttachment3D.get_child_count():
+	if curent_weapon_num == $Skeleton/BoneAttachment3D/RotatePoint.get_child_count():
 		curent_weapon_num = 0
-	$Skeleton/BoneAttachment3D.get_child(curent_weapon_num).show()
+	$Skeleton/BoneAttachment3D/RotatePoint.get_child(curent_weapon_num).show()
 
 func get_animation(mode: int, weapon_num: int) -> String:
 	if mode != CHOP:
@@ -114,3 +111,18 @@ func get_animation(mode: int, weapon_num: int) -> String:
 	if mode == CHOP:
 		return "gunplay"
 	return "Take 001"
+	
+var rot_x = 0.
+var rot_y = 0.
+var LOOKAROUND_SPEED = TAU/10000
+	
+func _input(event):
+	var rot = ($Skeleton/BoneAttachment3D/RotatePoint as Node3D)
+	rot.transform.basis = Basis()
+	if event is InputEventMouseMotion && Input.is_action_pressed("attack"):
+		rot_x += event.relative.x * LOOKAROUND_SPEED
+		rot_x = clamp(rot_x,-TAU/20, TAU/20)
+		rot_y += event.relative.y * LOOKAROUND_SPEED
+		rot_y = clamp(rot_y,-TAU/20, TAU/20)
+		rot.global_rotate(-basis.y, rot_x)
+		rot.global_rotate(-basis.x, rot_y)
